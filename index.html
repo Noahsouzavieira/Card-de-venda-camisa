@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card de venda</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="img/cmostarda.png" alt="camisas">
+        </div>
+        <div class="card-content">
+            <div class="wrapper">
+                <div class="tittle">Camisa Noahdeveloper</div>
+                <p>Camisa masculina</p>
+                <div class="price">R$ 39,99</div>
+                <div class="content size">
+                    <div class="name size-name">Tamanho</div>
+                    <div class="size-value">
+                        <span class="color"> GG </span>
+                        <span class="color"> G </span>
+                        <span class="active"> M </span>
+                        <span class="color"> P </span>
+                        <span class="color"> PP </span>
+                    </div>
+                </div>
+                <div class="content colour">
+                    <div class="name colour-name">Cor</div>
+                    <div class=" colour-value">
+                        <span class="mustard active" data-color="rgb(248, 118, 25);" data-img="img/cmostarda.png"> </span>
+                        <span class="black" data-color="black" data-img="img/cpreto.png"> </span>
+                        <span class="pink" data-color="rgb(241, 114, 241);" data-img="img/crosa"> </span>
+                    </div>
+                </div>
+                <div class="btns">
+                    <button>Comprar</button>
+                    <button>Adicionar ao carrinho</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        R$(".colour-value span").click(function(){
+            R$(".colour-value span").removeClass("active");
+            R$("this").addClass("active");
+            R$("body").css("background", R$(this).attr("data-color"));
+            R$(".price").css("color", R$(this).attr("data-color"));
+            R$(".price").css("color", R$(this).attr("data-color"));
+            R$(".size-value.color").css("color", R$(this).attr("data-color"));
+            R$(".size-value.active").css("background", R$(this).attr("data-color"));
+            R$(".image img").attr("src", R$(this).attr("data-img"));
+            R$(" .wrapper .btns button").css({"background": R$(this).attr("data-color"),
+            "border-color": R$(this).attr("data-color"),
+            });
+
+        });
+    </script>
+</body>
+</html>
